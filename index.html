@@ -1,59 +1,537 @@
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" data-theme="gruvbox">
+
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		html {
-			background-color:#24153C;
-		}
-		#bio {
-			text-align: center;
-			color: skyblue;
-			margin-top: 200px;
-			position:relative;
-		}
-		#vanta {
-			width: 100vw;
-	        height: 100vh;
-	        top:0;
-			left:0;
-			position:absolute;
-		}
-		a {
-			text-decoration: none;
-			color: burlywood;
-			font-size: 0.4em;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="keywords" content="homepage,landing-page,threejs,vantajs,3d-globe,gruvbox,github-api,github-pages" />
+  <meta name="description" content="Homepage of ronynn the arcaheology enthusiast" />
+  <meta name="subject" content="Homepage of ronynn the hobbyist programmer" />
+  <meta name="copyright" content="ronynn" />
+  <meta name="language" content="ES" />
+  <meta name="robots" content="index,follow" />
+  <meta name="revised" content="Sunday, March 12th, 2025, 5:15 pm" />
+  <meta name="abstract" content="" />
+  <meta name="topic" content="ronynn's homepage" />
+  <meta name="summary" content="" />
+  <meta name="Classification" content="Website" />
+  <meta name="author" content="ronynn" />
+  <meta name="designer" content="ronynn" />
+  <meta name="reply-to" content="ronynn" />
+  <meta name="owner" content="ronynn" />
+  <meta name="url" content="https://ronynn.github.io" />
+  <meta name="identifier-URL" content="https://ronynn.github.io" />
+
+  <meta name="pagename" content="ronynn homepage" />
+  <meta name="category" content="website" />
+
+  <meta name="rating" content="General" />
+
+  <meta name="subtitle" content="ronynn's homepage made with vantajs and threejs" />
+  <meta name="target" content="all" />
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="MobileOptimized" content="320" />
+
+
+  <link rel="stylesheet" href="normalize.css" />
+  <link rel="stylesheet" href="milligram.css" />
+
+
+  <title>ronynn homepage</title>
+
+
+  <style>
+    /* Theme variables for each theme */
+    :root[data-theme="gruvbox"] {
+      --bg: #32302f;
+      --text: #ebdbb2;
+      --border: #b57614;
+      --button: #d79921;
+      --button-hover: #b57614;
+      --input-bg: #3c3836;
+      --input-border: #bdae93;
+      --input-text: #ebdbb2;
+    }
+
+
+    :root[data-theme="monokai"] {
+      --bg: #2d2e27;
+      --text: #f8f8f2;
+      --border: #e69f66;
+      --button: #f92672;
+      --button-hover: #ae81ff;
+      --input-bg: #3a3b36;
+      --input-border: #e6db74;
+      --input-text: #f8f8f2;
+    }
+
+
+    :root[data-theme="dracula"] {
+      --bg: #282a36;
+      --text: #f8f8f2;
+      --border: #bd93f9;
+      --button: #ff79c6;
+      --button-hover: #50fa7b;
+      --input-bg: #44475a;
+      --input-border: #6272a4;
+      --input-text: #f8f8f2;
+    }
+
+
+    :root[data-theme="nord"] {
+      --bg: #2e3440;
+      --text: #eceff4;
+      --border: #81a1c1;
+      --button: #88c0d0;
+      --button-hover: #5e81ac;
+      --input-bg: #3b4252;
+      --input-border: #4c566a;
+      --input-text: #eceff4;
+    }
+
+
+    :root[data-theme="solarized"] {
+      --bg: #002b36;
+      --text: #839496;
+      --border: #586e75;
+      --button: #b58900;
+      --button-hover: #cb4b16;
+      --input-bg: #073642;
+      --input-border: #657b83;
+      --input-text: #93a1a1;
+    }
+
+
+    :root[data-theme="catppuccin"] {
+      --bg: #24273a;
+      --text: #cad3f5;
+      --border: #8aadf4;
+      --button: #f5bde6;
+      --button-hover: #c6a0f6;
+      --input-bg: #363a4f;
+      --input-border: #a6adc8;
+      --input-text: #cad3f5;
+    }
+
+
+    :root[data-theme="tokyo-night"] {
+      --bg: #1a1b26;
+      --text: #c0caf5;
+      --border: #7aa2f7;
+      --button: #bb9af7;
+      --button-hover: #7dcfff;
+      --input-bg: #24283b;
+      --input-border: #565f89;
+      --input-text: #c0caf5;
+    }
+
+
+    :root[data-theme="everforest"] {
+      --bg: #2f383e;
+      --text: #d3c6aa;
+      --border: #a7c080;
+      --button: #e67e80;
+      --button-hover: #a7c080;
+      --input-bg: #3a4239;
+      --input-border: #859289;
+      --input-text: #d3c6aa;
+    }
+
+
+    /* Global styles */
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+
+    /* Vanta background styling */
+    #vanta {
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+
+    /* Bio overlay on Vanta was fixed */
+    #bio {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: left;
+      padding: 0;
+      width: 90%;
+    }
+
+    #bio h3 {
+      font-size: 3.5em;
+      --margin: 0.2em 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    #bio h4 {
+      font-size: 2.2em;
+      margin: 0.2em 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    #bio a {
+      text-decoration: none;
+      color: var(--button);
+      --margin: 0 0.5em;
+      font-size: 1.7em;
+    }
+
+    #bio a:hover {
+      color: var(--button-hover);
+    }
+
+
+
+    /* Mobile-specific styles */
+    @media (max-width: 590px) {
+      #bio h3 {
+        font-size: 2.5em;
+        margin: 0.1em 0;
+      }
+
+      #bio h4 {
+        font-size: 1.8em;
+        margin: 0.1em 0;
+      }
+
+      #bio a {
+        font-size: 1.4em;
+      }
+
+      #bio {
+        position: absolute;
+      }
+    }
+
+
+
+
+    /* Cards section styling */
+    #cards-section {
+      padding: 1.5rem;
+      margin-top: 100vh;
+      /* Appears after the Vanta screen */
+    }
+
+    .cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+
+    .card {
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      padding: 1.5rem;
+      background: rgba(50, 48, 47, 0.8);
+      /* Transparent so Vanta shows through */
+      position: relative;
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+
+
+    /* Theme switcher styling */
+    #theme-switcher {
+      margin-top: 2rem;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    /*       
+        #theme-switcher button {
+            background: var(--button);
+            border: none;
+            padding: 0.5rem 1rem;
+            margin: 0.5rem;
+            color: var(--text);
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        #theme-switcher button:hover {
+            background: var(--button-hover);
+        }
+        
+        */
+
+  </style>
+
+
 </head>
 
+
 <body>
-	<div id="vanta">
-		<div id="bio">
-			<h3>rohan ʕ •ᴥ•ʔ </h3>
-            <h4>Archaeology Enthusiast, Hobbyist Programmer, Making mobile apps and games. </h4>
-		<a href="https://ronynn.github.io/blog">Blog</a>
-		<a href="https://ronynn.github.io/Game-Jam-Submissions">Games</a>
-		<a href="https://github.com/ronynn">Github</a>
-	</div>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.globe.min.js"></script>
-<script>
-  VANTA.GLOBE({
-	el: "#vanta",
-	mouseControls: true,
-	touchControls: true,
-	gyroControls: false,
-	minHeight: 200.00,
-	minWidth: 200.00,
-	scale: 1.00,
-	scaleMobile: 1.00,
-	color: 0x3698a4,
-	size: 1.20
-})
-</script>
+
+
+  <!-- Vanta background and bio overlay -->
+  <div id="vanta"></div>
+
+
+  <div id="bio">
+    <h3>ronynn ʕ •ᴥ•ʔ</h3>
+
+
+    <h4>Archaeology Enthusiast, Hobbyist Programmer, Making mobile apps and games.</h4>
+
+
+    <a href="https://ronynn.github.io/blog" target="_blank">Blog</a> -
+
+
+    <a href="https://ronynn.github.io/blog/projects" target="_blank">Projects</a> -
+
+
+    <a href="https://github.com/ronynn" target="_blank">Github</a> -
+
+    <a href="https://bsky.app/profile/overlyanalytic.bsky.social" target="_blank">Bluesky</a>
+
+  </div>
+
+
+  <!-- Cards section -->
+  <section id="cards-section">
+    <div class="cards-container">
+
+
+      <!-- To add a new card, simply duplicate this block and update data-user and data-repo -->
+      <div class="card" data-user="ronynn" data-repo="karui">
+        <h3 class="card-name">Loading...</h3>
+
+
+        <p class="card-description">Loading description...</p>
+
+
+        <!--   <a href="#" class="card-link" target="_blank">
+                    <img class="card-poster" src="" alt="Poster">
+                </a> -->
+        <a href="#" class="card-link" target="_blank">
+          Visit Repo
+        </a>
+      </div>
+
+
+      <div class="card" data-user="ronynn" data-repo="weather">
+        <h3 class="card-name">Loading...</h3>
+
+
+        <p class="card-description">Loading description...</p>
+
+
+        <a href="#" class="card-link" target="_blank">
+          Visit Repo
+        </a>
+      </div>
+
+      <div class="card" data-user="Xed-Editor" data-repo="Xed-Editor">
+        <h3 class="card-name">Loading...</h3>
+
+
+        <p class="card-description">Loading description...</p>
+
+
+        <a href="#" class="card-link" target="_blank">
+          Visit Repo
+        </a>
+      </div>
+
+
+      <div class="card" data-user="ronynn" data-repo="potato-peace">
+        <h3 class="card-name">Loading...</h3>
+
+
+        <p class="card-description">Loading description...</p>
+
+
+        <a href="#" class="card-link" target="_blank">
+          Visit Repo
+        </a>
+      </div>
+
+
+      <div class="card" data-user="ronynn" data-repo="cat-gen">
+        <h3 class="card-name">Loading...</h3>
+
+
+        <p class="card-description">Loading description...</p>
+
+
+        <a href="#" class="card-link" target="_blank">
+          Visit Repo
+        </a>
+      </div>
+
+
+      <div class="card" data-user="ronynn" data-repo="humanity-helper">
+        <h3 class="card-name">Loading...</h3>
+
+
+        <p class="card-description">Loading description...</p>
+
+
+        <a href="#" class="card-link" target="_blank">
+          Visit Repo
+        </a>
+      </div>
+    </div>
+
+
+    <!-- Theme switcher -->
+    <div id="theme-switcher">
+      <button data-theme="gruvbox">Gruvbox</button>
+
+
+      <button data-theme="monokai">Monokai</button>
+
+
+      <button data-theme="dracula">Dracula</button>
+
+
+      <button data-theme="nord">Nord</button>
+
+
+      <button data-theme="solarized">Solarized</button>
+
+
+      <button data-theme="catppuccin">Catppuccin</button>
+
+
+      <button data-theme="tokyo-night">Tokyo Night</button>
+
+
+      <button data-theme="everforest">Everforest</button>
+    </div>
+
+
+
+    <a href="https://github.com/ronynn/ronynn.github.io"><img src="https://img.shields.io/github/stars/ronynn/ronynn.github.io?style=social" width="75" height="20" alt="stars on homepage repo" /></a>
+
+
+
+  </section>
+
+
+  <!-- External libraries -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.globe.min.js"></script>
+
+
+  <script>
+    // Initialize Vanta Globe using the current theme's button color as the primary color
+    let vantaEffect = VANTA.GLOBE({
+      el: "#vanta",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: parseInt(getComputedStyle(document.documentElement)
+        .getPropertyValue('--button').trim().replace('#', '0x')),
+      size: 1.20
+    });
+
+
+
+    // Function to update theme and reinitialize Vanta
+    function updateTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
+
+
+      // Destroy current Vanta instance and reinitialize with new color
+      if (vantaEffect) {
+        vantaEffect.destroy();
+      }
+
+
+      vantaEffect = VANTA.GLOBE({
+        el: "#vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: parseInt(getComputedStyle(document.documentElement)
+          .getPropertyValue('--button').trim().replace('#', '0x')),
+        size: 1.20
+      });
+    }
+
+
+
+    // Attach event listeners to theme buttons
+    document.querySelectorAll('#theme-switcher button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        updateTheme(btn.getAttribute('data-theme'));
+      });
+    });
+
+
+
+    // Function to fetch and update card details using the GitHub API
+    function loadCardData(card) {
+      const user = card.getAttribute('data-user');
+      const repo = card.getAttribute('data-repo');
+      const apiUrl = `https://api.github.com/repos/${user}/${repo}`;
+
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          card.querySelector('.card-name').textContent = data.name || 'No Name';
+          card.querySelector('.card-description').textContent = data.description || 'No Description';
+          card.querySelector('.card-link').href = data.html_url;
+          //  card.querySelector('.card-poster').src = `https://raw.githubusercontent.com/${user}/${repo}/master/poster.jpg`;
+        })
+        .catch(error => {
+          console.error('Error loading card data:', error);
+          card.querySelector('.card-name').textContent = 'Error loading data';
+        });
+    }
+
+
+
+    // Load data for all cards
+    document.querySelectorAll('.card').forEach(card => {
+      loadCardData(card);
+    });
+
+  </script>
+
+
 </body>
 
 </html>
