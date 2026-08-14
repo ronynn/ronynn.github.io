@@ -2,10 +2,10 @@ const CACHE_NAME = 'ronynn-cache-v1'
 
 // Section: Cache Assets (Relative Paths)
 const ASSETS_TO_CACHE = [
-  './',
-  './index.html',
-  './globe.js',
-  './confetti.browser.min.js'
+  '/',
+  '/index.html',
+  '/globe.js',
+  '/confetti.browser.min.js'
 ]
 
 // Section: Install & Pre-cache

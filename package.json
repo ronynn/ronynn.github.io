@@ -1,0 +1,11 @@
+{
+  "name": "ronynn-homepage",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "astro build"
+  },
+  "dependencies": {
+    "astro": "^7.0.0"
+  }
+}
