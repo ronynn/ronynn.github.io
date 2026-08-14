@@ -358,6 +358,7 @@
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 1rem;
+        isolation: isolate;
       }
 
       .card {
@@ -365,13 +366,12 @@
         border-radius: 4px;
         padding: 1.5rem;
         background: rgba(128, 128, 128, 0.15);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(16px);
         position: relative;
         margin-top: 5px;
       }
 
-      /* --- DROPDOWN STYLES (UPDATED FOR TOGGLE) --- */
       .theme-dropdown {
         position: absolute;
         top: 1.5rem;
@@ -490,7 +490,7 @@
 
     <section id="cards-section">
       <div class="cards-container">
-        <div class="card">
+        < class="card">
           <h3>Research</h3>
           - Beyond the Cogito: Appreciating Yogācāra Conception of the Self with
           Western Philosophical Thought, 2025 <br />
@@ -502,12 +502,11 @@
           <hr />
           <h3>Quick Tech Stack</h3>
 
-          - Playground: Preact, Twind, Svelte, Vite, Astro, Deno, Hono,
+          - User Interfaces: Preact, Twind, Svelte, Vite, Astro, Deno, Hono,
           Pocketbase<br />
           - Creative: Littlejs, Aframe, Threejs, ZDog, Q5js-P5js, Macroquad
           (Rust)<br />
-
-          <h5>Currently getting better at Preact and the canvas api.</h5>
+          - Currently getting better at Preact and the canvas api.
           <br />
           <hr />
           <h3>About</h3>
@@ -630,7 +629,7 @@
         <div class="card">
           <h3>Other Projects</h3>
 
-          <div class="card" data-user="ronynn" data-repo="graphics_experiments">
+          <div class="card" data-user="ronynn" data-repo="graphics-experiments">
             <h3 class="card-name">Loading...</h3>
             <p class="card-description">Loading description...</p>
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
@@ -770,8 +769,8 @@
         loadCardData(card);
       });
     </script>
-    <script is:inline>
-      
+    
+    <script is:inline>      
       // Register Service Worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
@@ -779,11 +778,6 @@
       .catch((err) => console.error('Service Worker Registration Failed:', err))
   }
     </script>
-
-    <script
-      data-goatcounter="https://ronynn.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js"
-    ></script>
+    <script data-goatcounter="https://ronynn.goatcounter.com/count" async src="//gc.zgo.at/count.js"> </script>    
   </body>
 </html>

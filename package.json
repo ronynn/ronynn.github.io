@@ -6,6 +6,7 @@
     "build": "astro build"
   },
   "dependencies": {
-    "astro": "^7.0.0"
+    "astro": "^7.0.0",
+    "vite-plugin-pwa": "^0.21.0"
   }
 }
