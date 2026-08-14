@@ -5,6 +5,9 @@ export default defineConfig({
   site: 'https://ronynn.github.io/',
   output: 'static',
   vite: {
+    css: {
+      minify:'esbuild'
+    },
     plugins: [
       VitePWA({
         strategies: 'generateSW',
