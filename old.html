@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <script>
+      const savedTheme = localStorage.getItem("theme") || "nord"
+      document.documentElement.setAttribute("data-theme", savedTheme)
+    </script>
+
     <meta
       name="keywords"
       content="homepage,landing-page,threejs,vantajs,3d-globe,gruvbox,github-api,github-pages"
@@ -44,25 +49,15 @@
     <title>ronynn's homepage</title>
 
     <style>
-      :root[data-theme="slate"] {
-        --bg: #1e2024;
-        --text: #d1d5db;
-        --border: #4b5563;
-        --button: #9ca3af;
-        --button-hover: #6b7280;
-        --input-bg: #2d3036;
-        --input-border: #4b5563;
-        --input-text: #d1d5db;
-      }
-      :root[data-theme="amoled"] {
-        --bg: #000000;
-        --text: #ffffff;
-        --border: #333333;
-        --button: #ffffff;
-        --button-hover: #aaaaaa;
-        --input-bg: #111111;
-        --input-border: #333333;
-        --input-text: #ffffff;
+      :root {
+        --bg: #2e3440;
+        --text: #eceff4;
+        --border: #81a1c1;
+        --button: #88c0d0;
+        --button-hover: #5e81ac;
+        --input-bg: #3b4252;
+        --input-border: #4c566a;
+        --input-text: #eceff4;
       }
 
       :root[data-theme="gruvbox"] {
@@ -153,124 +148,15 @@
         --input-text: #d3c6aa;
       }
 
-      :root[data-theme="themeforest-light"] {
-        --bg: #f0ede8;
-        --text: #5a5a5a;
-        --border: #d5cdc0;
-        --button: #d4a373;
-        --button-hover: #c4956a;
-        --input-bg: #f8f6f2;
-        --input-border: #d5cdc0;
-        --input-text: #5a5a5a;
-      }
-
-      :root[data-theme="nord-light"] {
-        --bg: #e8ebef;
-        --text: #4c566a;
-        --border: #d0d5dd;
-        --button: #8a9ba8;
-        --button-hover: #7a8b9a;
-        --input-bg: #f2f4f8;
-        --input-border: #d0d5dd;
-        --input-text: #4c566a;
-      }
-
-      :root[data-theme="gruvbox-light"] {
-        --bg: #f0ebd8;
-        --text: #5c5346;
-        --border: #d5c9b0;
-        --button: #c4a882;
-        --button-hover: #b89b78;
-        --input-bg: #f6f1e2;
-        --input-border: #d5c9b0;
-        --input-text: #5c5346;
-      }
-
-      :root[data-theme="solarized-light"] {
-        --bg: #ece8d8;
-        --text: #6b7a7a;
-        --border: #c8c6b0;
-        --button: #9ab0b0;
-        --button-hover: #8aa0a0;
-        --input-bg: #f2efe0;
-        --input-border: #c8c6b0;
-        --input-text: #6b7a7a;
-      }
-
-      :root[data-theme="catppuccin-latte"] {
-        --bg: #e6e8ec;
-        --text: #5c5f77;
-        --border: #c8ccd8;
-        --button: #a8aec8;
-        --button-hover: #989eb8;
-        --input-bg: #f0f2f6;
-        --input-border: #c8ccd8;
-        --input-text: #5c5f77;
-      }
-
-      :root[data-theme="tokyo-night-light"] {
-        --bg: #e4e4e8;
-        --text: #4a5068;
-        --border: #c8c8d4;
-        --button: #8a90b0;
-        --button-hover: #7a80a0;
-        --input-bg: #eeeef2;
-        --input-border: #c8c8d4;
-        --input-text: #4a5068;
-      }
-
-      :root[data-theme="dracula-light"] {
-        --bg: #ececf0;
-        --text: #505068;
-        --border: #c8c8d8;
-        --button: #b0a8c8;
-        --button-hover: #a098b8;
-        --input-bg: #f4f4f8;
-        --input-border: #c8c8d8;
-        --input-text: #505068;
-      }
-
-      :root[data-theme="rose-pine-light"] {
-        --bg: #ede8e4;
-        --text: #5a5470;
-        --border: #d0c8c0;
-        --button: #b8a8b0;
-        --button-hover: #a898a0;
-        --input-bg: #f5f0ec;
-        --input-border: #d0c8c0;
-        --input-text: #5a5470;
-      }
-
-      :root[data-theme="ayu-light"] {
-        --bg: #eae8e4;
-        --text: #5a6070;
-        --border: #ccc8c0;
-        --button: #c4b898;
-        --button-hover: #b4a888;
-        --input-bg: #f2f0ec;
-        --input-border: #ccc8c0;
-        --input-text: #5a6070;
-      }
-
-      :root[data-theme="github-light"] {
-        --bg: #eef0f2;
-        --text: #4a5058;
-        --border: #ccd0d6;
-        --button: #8a98a8;
-        --button-hover: #7a8898;
-        --input-bg: #f6f8fa;
-        --input-border: #ccd0d6;
-        --input-text: #4a5058;
-      }
-
       html,
       body {
         margin: 0;
         padding: 0;
         font-family: monospace;
+        background-color: var(--bg);
         color: var(--text);
       }
-
+      
       a {
         color: var(--button);
         font-weight: bold;
@@ -338,14 +224,17 @@
 
         #bio {
           position: absolute;
-          top: 30%;
+          top: 20%;
         }
       }
 
-      #cards-section {
+      .content-section {
         padding: 1.5rem;
-        margin-top: 100vh;
         background: transparent;
+      }
+
+      #research-section {
+        margin-top: 100vh;
       }
 
       .cards-container {
@@ -362,12 +251,11 @@
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         position: relative;
-        margin-top: 5px;
+        margin-bottom: 1rem;
       }
 
-      /* --- DROPDOWN STYLES (UPDATED FOR TOGGLE) --- */
       .theme-dropdown {
-        position: absolute;
+        position: fixed;
         top: 1.5rem;
         right: 1.5rem;
         z-index: 1000;
@@ -386,8 +274,12 @@
         transition: background 0.3s;
       }
 
+      .theme-dropbtn:hover {
+        background: var(--button-hover);
+      }
+
       .theme-dropdown-content {
-        display: none; /* Hidden by default */
+        display: none;
         position: absolute;
         right: 0;
         margin-top: 0.5rem;
@@ -427,7 +319,7 @@
 
   <body>
     <div class="theme-dropdown">
-      <button class="theme-dropbtn" id="theme-toggle-btn">Themes</button>
+      <button class="theme-dropbtn" id="theme-button">Themes</button>
       <div class="theme-dropdown-content" id="theme-menu">
         <button data-theme="gruvbox">Gruvbox</button>
         <button data-theme="monokai">Monokai</button>
@@ -437,18 +329,6 @@
         <button data-theme="catppuccin">Catppuccin</button>
         <button data-theme="tokyo-night">Tokyo Night</button>
         <button data-theme="everforest">Everforest</button>
-        <button data-theme="amoled">AMOLED</button>
-        <button data-theme="slate">Slate</button>
-        <button data-theme="themeforest-light">ThemeForest Light</button>
-        <button data-theme="nord-light">Nord Light</button>
-        <button data-theme="gruvbox-light">Gruvbox Light</button>
-        <button data-theme="solarized-light">Solarized Light</button>
-        <button data-theme="catppuccin-latte">Catppuccin Latte</button>
-        <button data-theme="tokyo-night-light">Tokyo Night Light</button>
-        <button data-theme="dracula-light">Dracula Light</button>
-        <button data-theme="rose-pine-light">Rose Pine Light</button>
-        <button data-theme="ayu-light">Ayu Light</button>
-        <button data-theme="github-light">GitHub Light</button>
       </div>
     </div>
 
@@ -458,95 +338,41 @@
       <h3>ronynn ʕ •ᴥ•ʔ</h3>
 
       <h4>
-        - Size-coding enthusiast<br />
-        - Archaeology student <br />
-        - Making interactive experiences<br />
-        - and data-focussed presentations
+        - Size-coding enthusiast<br/>
+        - Archaeology student <br/>
+        - Making FOSS apps/games <br/>
+        - and Data Presentations
       </h4>
-
-      <br />
-
-      <a href="https://ronynn.github.io/blog" target="_blank">Blog</a>
-      <a href="https://ronynn.github.io/blog/projects" target="_blank"
-        >Projects</a
-      >
-      <a href="https://github.com/ronynn" target="_blank">Github</a>
-      <a href="https://bsky.app/profile/amayorilabs.bsky.social" target="_blank"
-        >Bluesky</a
-      >
+      
+      <br/>
+      
+      <a href="https://ronynn.github.io/blog" target="_blank">Blog</a> -
+      <a href="https://ronynn.github.io/blog/projects" target="_blank">Projects</a> -
+      <a href="https://github.com/ronynn" target="_blank">Github</a> -
+      <a href="https://bsky.app/profile/amayorilabs.bsky.social" target="_blank">Bluesky</a>
 
       <h5>
-        - See Github Page for my programming journey <br />
-        - Touch the globe, or move around your device to see it <br />
+        - See Github Page for my programming journey <br/>
+        - Touch the globe, or move around your device to see it <br/>
         - Scroll down to see links to my repos
       </h5>
     </div>
 
-    <section id="cards-section">
+    
+
+    <section id="tools-section" class="content-section">
+      <div class="card">
+        <h3> Tools </h3>
+        <p>Three.js, Vanta.js, Node.js, Express, Vite, Rollup, Webpack, Esbuild, Babel, React, Svelte, Vue, TypeScript, RxJS, Lodash, D3.js, Chart.js, PixiJS, Phaser, Jest</p>
+      </div>
+    </section>
+
+    <section id="cards-section" class="content-section">
       <div class="cards-container">
+        
         <div class="card">
-          <h3>Research</h3>
-          - Beyond the Cogito: Appreciating Yogācāra Conception of the Self with
-          Western Philosophical Thought, 2025 <br />
-          - Digital Preservation and Evolution of the Indigenous Languages: From
-          Archives to Classrooms, 2025 <br />
-          - Problems faced by teachers in adoption of closed source technology,
-          2024 <br />
-          <br />
-          <hr />
-          <h3>Quick Tech Stack</h3>
-
-          - Playground: Preact, Twind, Svelte, Vite, Astro, Deno, Hono,
-          Pocketbase<br />
-          - Creative: Littlejs, Aframe, Threejs, ZDog, Q5js-P5js, Macroquad
-          (Rust)<br />
-
-          <h5>Currently getting better at Preact and the canvas api.</h5>
-          <br />
-          <hr />
-          <h3>About</h3>
-          - This page originally used threejs+vanta.globe background, but
-          currently uses raw WEBGL, bringing page size down from 600kb to under
-          40kb now, ofcourse with gzip the page you saw or are seeing in browser
-          now, was/is much less.<br />
-          - I got into programming through text-based games. There's this saying
-          that anyone who gets into programming is inherently an optimist
-          saying: Sure! How hard can it be? Well this was my reaction at text
-          based games.<br />
-          - Around 2016 I saw an interactive fiction game which was very simple
-          yet so funny, I wondered if I could make that too, learned twine, ink,
-          inform6 (punyInform for a MSDOS game), and even made an interactive
-          fiction game in TIC80 later with lua. I have since then been
-          particpating in IFCOMP, SpringThing, ldjam almost every year. <br />
-          - Next step according to blogs I read back then was to make a blog,
-          but I didn't find it that much fun to write php plugins for wordpress.
-          But made some pages for an NGO so I believe that was useful. Moved my
-          blog to jekyll later. <br/>
-          - Around 2020 I got really into processing but
-          my computer couldn't run opengl well, so next was p5js, and then
-          utilised sololearn and freecodecamp to learn javascript (completed the
-          front-end certificate course in both). Freecodecamp taught
-          data-visualization with d3js, but I found zdogjs library around 2022
-          and made pseudo 3d visualization stuff that looked different that
-          anything else. Used it at some conference presentations. <br />
-          - 2023 onwards started obsessing over aframejs, and participated in
-          gamejams, became a game engine hopper but took that as an opportunity
-          to learn more about other programming languages <br />
-          - 2025 Made Karui todo, shintaku and a few other android apps, diving
-          deep into frontend frameworks and comparing svelte, alpinejs, preact.
-          <br />
-          - 2026 Recently got into size-coding, found littlejs+box2dwasm
-          combination to be fun, always have been a fan of simplicity,
-          participating in js13k this year. <br />
-
-          - I recently became fond of Allman style of braces. Other such
-          opinions are on the blog.
-          <br />
-        </div>
-
-        <div class="card">
-          <h3>Open Source Applications</h3>
-
+          <h3> Open Source Applications </h3>
+          
           <div class="card" data-user="ronynn" data-repo="karui">
             <h3 class="card-name">Loading...</h3>
             <p class="card-description">Loading description...</p>
@@ -576,7 +402,7 @@
             <p class="card-description">Loading description...</p>
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
-
+ 
           <div class="card" data-user="ronynn" data-repo="weather">
             <h3 class="card-name">Loading...</h3>
             <p class="card-description">Loading description...</p>
@@ -589,9 +415,9 @@
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
         </div>
-
-        <div class="card">
-          <h3>Open Source Games</h3>
+        
+        <div class="card"> 
+          <h3> Open Source Games </h3>
 
           <div class="card" data-user="ronynn" data-repo="lifesim2k">
             <h3 class="card-name">Loading...</h3>
@@ -624,8 +450,8 @@
           </div>
         </div>
 
-        <div class="card">
-          <h3>Other Projects</h3>
+        <div class="card"> 
+          <h3> Other Projects </h3>
 
           <div class="card" data-user="ronynn" data-repo="graphics_experiments">
             <h3 class="card-name">Loading...</h3>
@@ -639,11 +465,7 @@
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
 
-          <div
-            class="card"
-            data-user="ronynn"
-            data-repo="freecodecamp-front-end"
-          >
+          <div class="card" data-user="ronynn" data-repo="freecodecamp-front-end">
             <h3 class="card-name">Loading...</h3>
             <p class="card-description">Loading description...</p>
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
@@ -655,25 +477,29 @@
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
         </div>
+
       </div>
-      <br />
-      Give this page a 🌟 on its
-      <a href="https://github.com/ronynn/ronynn.github.io">github repo</a>.
+      <br/>
     </section>
+    
+    <div style="padding: 0 1.5rem 1.5rem 1.5rem;">
+      Give this page a 🌟 on its <a href="https://github.com/ronynn/ronynn.github.io">github repo</a>.
+    </div>
 
     <script src="globe.js"></script>
 
     <script>
-      // DOM Interaction logic
+      // Helpers
+      
+      const pipe = (...fns) => (x) => fns.reduce((v, f) => f(v), x)
 
-      const getThemeColor = (variable) => {
-        return parseInt(
-          getComputedStyle(document.documentElement)
-            .getPropertyValue(variable)
-            .trim()
-            .replace("#", "0x"),
-        );
-      };
+      const extractThemeHex = (variable) => getComputedStyle(document.documentElement).getPropertyValue(variable)
+      const cleanHex = (val) => val.trim().replace("#", "0x")
+      const parseHex = (val) => parseInt(val)
+
+      const getThemeColor = (variable) => pipe(extractThemeHex, cleanHex, parseHex)(variable)
+
+      // Theme logic
 
       let vantaEffect = VANTA.GLOBE({
         el: "#vanta",
@@ -686,14 +512,17 @@
         scaleMobile: 1.0,
         color: getThemeColor("--button"),
         backgroundColor: getThemeColor("--bg"),
-        size: 0.8,
-      });
+        size: 0.8
+      })
 
-      function updateTheme(theme) {
-        document.documentElement.setAttribute("data-theme", theme);
+      function updateTheme(theme)
+      {
+        localStorage.setItem("theme", theme)
+        document.documentElement.setAttribute("data-theme", theme)
 
-        if (vantaEffect) {
-          vantaEffect.destroy();
+        if (vantaEffect)
+        {
+          vantaEffect.destroy()
         }
 
         vantaEffect = VANTA.GLOBE({
@@ -707,65 +536,66 @@
           scaleMobile: 1.0,
           color: getThemeColor("--button"),
           backgroundColor: getThemeColor("--bg"),
-          size: 0.8,
-        });
+          size: 0.8
+        })
       }
 
-      // --- UPDATED DROPDOWN LOGIC ---
-      const toggleBtn = document.getElementById("theme-toggle-btn");
-      const themeMenu = document.getElementById("theme-menu");
+      // UI interactions
 
-      // Toggle menu visibility on button click
-      toggleBtn.addEventListener("click", (e) => {
-        e.stopPropagation(); // Prevent bubbling to window
-        themeMenu.classList.toggle("show");
-      });
+      const themeButton = document.getElementById("theme-button")
+      const themeMenu = document.getElementById("theme-menu")
 
-      // Handle theme selection
-      document
-        .querySelectorAll(".theme-dropdown-content button")
-        .forEach((btn) => {
-          btn.addEventListener("click", () => {
-            updateTheme(btn.getAttribute("data-theme"));
-            themeMenu.classList.remove("show"); // Close modal after selection
-          });
-        });
+      themeButton.addEventListener("click", (event) =>
+      {
+        event.stopPropagation()
+        themeMenu.classList.toggle("show")
+      })
 
-      // Close menu if clicked outside
-      window.addEventListener("click", () => {
-        if (themeMenu.classList.contains("show")) {
-          themeMenu.classList.remove("show");
-        }
-      });
+      document.addEventListener("click", () =>
+      {
+        themeMenu.classList.remove("show")
+      })
+
+      document.querySelectorAll("#theme-menu button").forEach((btn) =>
+      {
+        btn.addEventListener("click", () =>
+        {
+          updateTheme(btn.getAttribute("data-theme"))
+          themeMenu.classList.remove("show")
+        })
+      })
 
       // Fetch api requests
 
-      function loadCardData(card) {
-        const user = card.getAttribute("data-user");
-        const repo = card.getAttribute("data-repo");
-        const apiUrl = `https://api.github.com/repos/${user}/${repo}`;
-
-        card.querySelector(".card-name").textContent = repo;
-        card.querySelector(".card-link").href =
-          `https://github.com/${user}/${repo}`;
+      function loadCardData(card)
+      {
+        const user = card.getAttribute("data-user")
+        const repo = card.getAttribute("data-repo")
+        const apiUrl = `https://api.github.com/repos/${user}/${repo}`
+        
+        card.querySelector(".card-name").textContent = repo
+        card.querySelector(".card-link").href = `https://github.com/${user}/${repo}`
 
         fetch(apiUrl)
-          .then((response) => {
-            return response.json();
+          .then((response) =>
+          {
+            return response.json()
           })
-          .then((data) => {
-            card.querySelector(".card-description").textContent =
-              data.description || "No Description";
+          .then((data) =>
+          {
+            card.querySelector(".card-description").textContent = data.description || "No Description"
           })
-          .catch((error) => {
-            console.error("Error loading card data:", error);
-            card.querySelector(".card-name").textContent = "Error loading data";
-          });
+          .catch((error) =>
+          {
+            console.error("Error loading card data:", error)
+            card.querySelector(".card-name").textContent = "Error loading data"
+          })
       }
 
-      document.querySelectorAll(".card[data-repo]").forEach((card) => {
-        loadCardData(card);
-      });
+      document.querySelectorAll(".card[data-repo]").forEach((card) =>
+      {
+        loadCardData(card)
+      })
     </script>
 
     <script
@@ -773,5 +603,6 @@
       async
       src="//gc.zgo.at/count.js"
     ></script>
+
   </body>
 </html>
