@@ -664,7 +664,7 @@
       <a href="https://github.com/ronynn/ronynn.github.io">github repo</a>.
     </section>
 
-    <script src="/globe.js"></script>
+    <script is:inline src="/globe.js"></script>
 
     <script>
       // DOM Interaction logic
@@ -769,7 +769,9 @@
       document.querySelectorAll(".card[data-repo]").forEach((card) => {
         loadCardData(card);
       });
-
+    </script>
+    <script is:inline>
+      
       // Register Service Worker
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js')
