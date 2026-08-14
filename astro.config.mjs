@@ -6,7 +6,7 @@ export default defineConfig({
   output: 'static',
   vite: {
     css: {
-      minify:'esbuild'
+      minify: false
     },
     plugins: [
       VitePWA({
