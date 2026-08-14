@@ -1,9 +1,3 @@
----
-
----
-
-
-
 <!doctype html>
 <html lang="en" data-theme="nord">
   <head>
@@ -159,6 +153,116 @@
         --input-text: #d3c6aa;
       }
 
+      :root[data-theme="themeforest-light"] {
+        --bg: #f0ede8;
+        --text: #5a5a5a;
+        --border: #d5cdc0;
+        --button: #d4a373;
+        --button-hover: #c4956a;
+        --input-bg: #f8f6f2;
+        --input-border: #d5cdc0;
+        --input-text: #5a5a5a;
+      }
+
+      :root[data-theme="nord-light"] {
+        --bg: #e8ebef;
+        --text: #4c566a;
+        --border: #d0d5dd;
+        --button: #8a9ba8;
+        --button-hover: #7a8b9a;
+        --input-bg: #f2f4f8;
+        --input-border: #d0d5dd;
+        --input-text: #4c566a;
+      }
+
+      :root[data-theme="gruvbox-light"] {
+        --bg: #f0ebd8;
+        --text: #5c5346;
+        --border: #d5c9b0;
+        --button: #c4a882;
+        --button-hover: #b89b78;
+        --input-bg: #f6f1e2;
+        --input-border: #d5c9b0;
+        --input-text: #5c5346;
+      }
+
+      :root[data-theme="solarized-light"] {
+        --bg: #ece8d8;
+        --text: #6b7a7a;
+        --border: #c8c6b0;
+        --button: #9ab0b0;
+        --button-hover: #8aa0a0;
+        --input-bg: #f2efe0;
+        --input-border: #c8c6b0;
+        --input-text: #6b7a7a;
+      }
+
+      :root[data-theme="catppuccin-latte"] {
+        --bg: #e6e8ec;
+        --text: #5c5f77;
+        --border: #c8ccd8;
+        --button: #a8aec8;
+        --button-hover: #989eb8;
+        --input-bg: #f0f2f6;
+        --input-border: #c8ccd8;
+        --input-text: #5c5f77;
+      }
+
+      :root[data-theme="tokyo-night-light"] {
+        --bg: #e4e4e8;
+        --text: #4a5068;
+        --border: #c8c8d4;
+        --button: #8a90b0;
+        --button-hover: #7a80a0;
+        --input-bg: #eeeef2;
+        --input-border: #c8c8d4;
+        --input-text: #4a5068;
+      }
+
+      :root[data-theme="dracula-light"] {
+        --bg: #ececf0;
+        --text: #505068;
+        --border: #c8c8d8;
+        --button: #b0a8c8;
+        --button-hover: #a098b8;
+        --input-bg: #f4f4f8;
+        --input-border: #c8c8d8;
+        --input-text: #505068;
+      }
+
+      :root[data-theme="rose-pine-light"] {
+        --bg: #ede8e4;
+        --text: #5a5470;
+        --border: #d0c8c0;
+        --button: #b8a8b0;
+        --button-hover: #a898a0;
+        --input-bg: #f5f0ec;
+        --input-border: #d0c8c0;
+        --input-text: #5a5470;
+      }
+
+      :root[data-theme="ayu-light"] {
+        --bg: #eae8e4;
+        --text: #5a6070;
+        --border: #ccc8c0;
+        --button: #c4b898;
+        --button-hover: #b4a888;
+        --input-bg: #f2f0ec;
+        --input-border: #ccc8c0;
+        --input-text: #5a6070;
+      }
+
+      :root[data-theme="github-light"] {
+        --bg: #eef0f2;
+        --text: #4a5058;
+        --border: #ccd0d6;
+        --button: #8a98a8;
+        --button-hover: #7a8898;
+        --input-bg: #f6f8fa;
+        --input-border: #ccd0d6;
+        --input-text: #4a5058;
+      }
+
       html,
       body {
         margin: 0;
@@ -252,43 +356,17 @@
       }
 
       .card {
-        border: 2px solid rgba(255, 255, 255, 0.12);
+        border: 2px solid var(--border);
         border-radius: 4px;
         padding: 1.5rem;
-        background: rgba(90, 90, 95, 0.55);
-        -webkit-backdrop-filter: blur(16px) saturate(1.4) brightness(1.05) contrast(0.95);
-        backdrop-filter: blur(72px) saturate(1.4) brightness(1.05) contrast(0.95);
-        color: #f5f5f7;
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
-        box-shadow: 
-          inset 0 1px 0 rgba(255, 255, 255, 0.06),
-          0 8px 32px rgba(0, 0, 0, 0.2);
+        background: rgba(128, 128, 128, 0.15);
+        backdrop-filter: blur(12px)  ;
+
+        -webkit-backdrop-filter: blur(12px) saturate(1.4) brightness(1.05) contrast(0.95);
         position: relative;
         margin-top: 5px;
-        isolation: isolate;
+        isolation:isolate;
       }
-
-      .card *, theme-dropdown-content * {
-        color: #f5f5f7;
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
-      }
-
-      .card h1, 
-      .card h2, 
-      .card h3 {
-        color: #ffffff;
-        text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
-      }
-
-      .card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: -1;
-      }     
 
       .theme-dropdown {
         position: absolute;
@@ -315,17 +393,13 @@
         position: absolute;
         right: 0;
         margin-top: 0.5rem;
-  background: rgba(90, 90, 95, 0.55);
-        --backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4) brightness(1.05) contrast(0.95);
+        background: rgba(128, 128, 128, 0.15);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
         border: 2px solid var(--border);
         border-radius: 4px;
         min-width: 140px;
-      
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 8px 32px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       }
 
       .theme-dropdown-content.show {
@@ -367,6 +441,16 @@
         <button data-theme="everforest">Everforest</button>
         <button data-theme="amoled">AMOLED</button>
         <button data-theme="slate">Slate</button>
+        <button data-theme="themeforest-light">ThemeForest Light</button>
+        <button data-theme="nord-light">Nord Light</button>
+        <button data-theme="gruvbox-light">Gruvbox Light</button>
+        <button data-theme="solarized-light">Solarized Light</button>
+        <button data-theme="catppuccin-latte">Catppuccin Latte</button>
+        <button data-theme="tokyo-night-light">Tokyo Night Light</button>
+        <button data-theme="dracula-light">Dracula Light</button>
+        <button data-theme="rose-pine-light">Rose Pine Light</button>
+        <button data-theme="ayu-light">Ayu Light</button>
+        <button data-theme="github-light">GitHub Light</button>
       </div>
     </div>
 
@@ -394,7 +478,7 @@
       >
 
       <h5>
-        - This page is built with Astro 7, the globe is pure WebGL. <br />
+        - This page is maintains backdrop-filter effect, the globe is pure WebGL. <br />
         - Touch the globe, or move around your device to see it. <br />
         - Scroll down to see links to my repos.
       </h5>
