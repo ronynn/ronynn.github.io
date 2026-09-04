@@ -224,7 +224,7 @@
         }
 
         #bio h4 {
-          font-size: 1.8em;
+          font-size: 1.4em;
           margin: 0.1em 0;
         }
 
@@ -255,14 +255,17 @@
         border: 2px solid rgba(255, 255, 255, 0.12);
         border-radius: 4px;
         padding: 1.5rem;
+        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
         background: rgba(90, 90, 95, 0.55);
+/*        
         -webkit-backdrop-filter: blur(16px) saturate(1.4) brightness(1.05) contrast(0.95);
         backdrop-filter: blur(72px) saturate(1.4) brightness(1.05) contrast(0.95);
-        color: #f5f5f7;
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
+        
         box-shadow: 
           inset 0 1px 0 rgba(255, 255, 255, 0.06),
           0 8px 32px rgba(0, 0, 0, 0.2);
+
+        */
         position: relative;
         margin-top: 5px;
         isolation: isolate;
@@ -280,15 +283,7 @@
         text-shadow: 0 2px 20px rgba(0, 0, 0, 0.6), 0 1px 4px rgba(0, 0, 0, 0.5);
       }
 
-      .card::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        border-radius: inherit;
-        background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%);
-        pointer-events: none;
-        z-index: -1;
-      }     
+
 
       .theme-dropdown {
         position: absolute;
@@ -315,17 +310,12 @@
         position: absolute;
         right: 0;
         margin-top: 0.5rem;
-  background: rgba(90, 90, 95, 0.55);
-        --backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(16px) saturate(1.4) brightness(1.05) contrast(0.95);
+        background: var(--bg);
         border: 2px solid var(--border);
         border-radius: 4px;
         min-width: 140px;
       
-        text-shadow: 0 2px 16px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4);
-  box-shadow: 
-    inset 0 1px 0 rgba(255, 255, 255, 0.06),
-    0 8px 32px rgba(0, 0, 0, 0.2);
+        
       }
 
       .theme-dropdown-content.show {
@@ -376,10 +366,9 @@
       <h3>ronynn ʕ •ᴥ•ʔ</h3>
 
       <h4>
-        - Size-coding enthusiast<br />
+        - Creator of Karui and LifeSim2k<br />
         - Archaeology student <br />
-        - Making interactive experiences<br />
-        - and data-focussed presentations
+        - Sizecoding enthusiast
       </h4>
 
       <br />
@@ -389,21 +378,19 @@
         >Projects</a
       >
       <a href="https://github.com/ronynn" target="_blank">Github</a>
-      <a href="https://bsky.app/profile/amayorilabs.bsky.social" target="_blank"
-        >Bluesky</a
-      >
+
 
       <h5>
-        - This page is built with Astro 7, the globe is pure WebGL. <br />
-        - Touch the globe, or move around your device to see it. <br />
-        - Scroll down to see links to my repos.
+        - This page is built with Astro 7 (12kb gzipped), the globe is pure WebGL. <br />
+        - Touch the globe, or move around your device to watch it move. <br />
+        - Scroll down to see links to my repos. See this page with <a href="https://ronynn.github.io/old">bloom effect</a>.
       </h5>
     </div>
 
     <section id="cards-section">
       <div class="cards-container">
         <div class="card">
-          <h3>Research</h3>
+          <h3>Published Research</h3>
           - Beyond the Cogito: Appreciating Yogācāra Conception of the Self with
           Western Philosophical Thought, 2025 <br />
           - Digital Preservation and Evolution of the Indigenous Languages: From
@@ -412,10 +399,10 @@
           2024 <br />
           <br />
           <hr />
-          <h3>Quick Tech Stack</h3>
+          <h3>Tech Stack</h3>
 
-          - User Interfaces: Preact, Twind, Svelte, Vite, Astro, Deno, Hono,
-          Pocketbase<br />
+          - UI Setup: Preact, Twind, Svelte, Vite, JQuery <br/>
+          - Server: Flask, Sanic, Astro, Deno, Hono, Pocketbase<br />
           - Creative: Littlejs, Aframe, Threejs, ZDog, Q5js-P5js, Macroquad
           (Rust)<br />
           - Currently getting better at Preact and the canvas api.
@@ -424,19 +411,12 @@
           <h3>About</h3>
           - This page originally used threejs+vanta.globe background, but
           currently uses raw WEBGL, bringing page size down from 600kb to under
-          40kb now, ofcourse with gzip the page you saw or are seeing in browser
-          now, was/is much less.<br />
-          - I got into programming through text-based games. There's this saying
-          that anyone who gets into programming is inherently an optimist
-          saying: Sure! How hard can it be? Well this was my reaction at text
-          based games.<br />
-          - Around 2016 I saw an interactive fiction game which was very simple
-          yet so funny, I wondered if I could make that too, learned twine, ink,
+          40kb now, ofcourse with gzip the page you are seeing in browser is approx 12kb.<br />
+          - I got into programming through text-based games, learned twine, ink,
           inform6 (punyInform for a MSDOS game), and even made an interactive
           fiction game in TIC80 later with lua. I have since then been
           particpating in IFCOMP, SpringThing, ldjam almost every year. <br />
-          - Next step according to blogs I read back then was to make a blog,
-          but I didn't find it that much fun to write php plugins for wordpress.
+          - Next learned to write php plugins for wordpress, not fun.
           But made some pages for an NGO so I believe that was useful. Moved my
           blog to jekyll later. <br/>
           - Around 2020 I got really into processing but
@@ -447,15 +427,8 @@
           gamejams, became a game engine hopper but took that as an opportunity
           to learn more about other programming languages <br />
           - 2025 Made Karui todo, shintaku and a few other android apps, diving
-          deep into frontend frameworks and comparing svelte, alpinejs, preact.
-          <br />
-          - 2026 Recently got into size-coding, found littlejs+box2dwasm
-          combination to be fun, always have been a fan of simplicity,
-          participating in js13k this year. <br />
-
-          - I recently became fond of Allman style of braces. Other such
-          opinions are on the blog.
-          <br />
+          deep into frontend frameworks and comparing svelte, alpinejs, preact.          <br />
+          - 2026 Recently got into size-coding, became fond of Allman style of braces. Relevant stories are on the <a href="https://ronynn.github.io/blog">blog</a>. Follow me on <a href="https://github.com/ronynn">my github page</a> to see my new projects.<br />
         </div>
 
         <div class="card">
@@ -505,7 +478,7 @@
         </div>
 
         <div class="card">
-          <h3>Open Source Games</h3>
+          <h3>Game Repositories</h3>
 
           <div class="card" data-user="ronynn" data-repo="lifesim2k">
             <h3 class="card-name">Loading...</h3>
@@ -536,11 +509,6 @@
             <p class="card-description">Loading description...</p>
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
-        </div>
-
-        <div class="card">
-          <h3>Other Projects</h3>
-
           <div class="card" data-user="ronynn" data-repo="graphics-experiments">
             <h3 class="card-name">Loading...</h3>
             <p class="card-description">Loading description...</p>
@@ -552,26 +520,12 @@
             <p class="card-description">Loading description...</p>
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
-
-          <div
-            class="card"
-            data-user="ronynn"
-            data-repo="freecodecamp-front-end"
-          >
-            <h3 class="card-name">Loading...</h3>
-            <p class="card-description">Loading description...</p>
-            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-          </div>
-
-          <div class="card" data-user="ronynn" data-repo="dotfiles">
-            <h3 class="card-name">Loading...</h3>
-            <p class="card-description">Loading description...</p>
-            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-          </div>
         </div>
+
+
       </div>
       <br />
-      Give this page a 🌟 on its
+      Give this page a 🌟 on its:&nbsp
       <a href="https://github.com/ronynn/ronynn.github.io">github repo</a>.
     </section>
 
