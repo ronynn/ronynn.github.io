@@ -60,16 +60,6 @@
         --input-border: #4b5563;
         --input-text: #d1d5db;
       }
-      :root[data-theme="amoled"] {
-        --bg: #000000;
-        --text: #ffffff;
-        --border: #333333;
-        --button: #ffffff;
-        --button-hover: #aaaaaa;
-        --input-bg: #111111;
-        --input-border: #333333;
-        --input-text: #ffffff;
-      }
 
       :root[data-theme="gruvbox"] {
         --bg: #32302f;
@@ -183,6 +173,7 @@
 
       #bio {
         position: absolute;
+        width:66vw;
         top: 50%;
         left: 50%;
         margin-right: 60%;
@@ -193,14 +184,14 @@
       }
 
       #bio h3 {
-        font-size: 3.5em;
+        font-size: 2.5em;
         margin: 0.2em 0;
         padding-left: 0;
         padding-right: 0;
       }
 
       #bio h4 {
-        font-size: 2.2em;
+        font-size: 2em;
         margin: 0.2em 0;
         padding-left: 0;
         padding-right: 0;
@@ -210,14 +201,14 @@
         text-decoration: none;
         color: var(--button);
         margin: 0 0.5em;
-        font-size: 1.7em;
+        font-size: 1em;
       }
 
       #bio a:hover {
         color: var(--button-hover);
       }
 
-      @media (max-width: 590px) {
+      @media (max-width: 490px) {
         #bio h3 {
           font-size: 2.5em;
           margin: 0.1em 0;
@@ -346,7 +337,6 @@
         <button data-theme="catppuccin">Catppuccin</button>
         <button data-theme="tokyo-night">Tokyo Night</button>
         <button data-theme="everforest">Everforest</button>
-        <button data-theme="amoled">AMOLED</button>
         <button data-theme="slate">Slate</button>
       </div>
     </div>
@@ -358,14 +348,12 @@
 
       <h4>
         - Creator of Karui and LifeSim2k<br />
-        - Archaeology student, Sizecoding enthusiast<br/>
-        # Focus Areas: <br/>
-        - Building educational tools for low-bandwidth regions <br/>
-        - Computational humanities and social simulations
+        - Archaeology student, sizecoding and resource efficiency enthusiast.<br/>
+        - Interested in building educational tools for low-bandwidth regions and research in computational humanities and social simulations.
       </h4>
 
       <br />
-      <a href="https://ronynn.github.io/about" target="_blank">About Me</a>
+      <a href="https://ronynn.github.io/about" target="_blank">About</a>
       <a href="https://ronynn.github.io/blog" target="_blank">Blog</a>
       <a href="https://ronynn.github.io/blog/projects" target="_blank"
         >Projects</a
@@ -397,32 +385,30 @@
           <hr />
           <h3>Tech Stack</h3>
           In recent times, everyone's choice is React because AI knows it best, I'd still argue that simplicity, packet-size and closeness to native are still more important considerations for extensibility, specially for software that people will depend on. <br/>
-          - UI: Petite-Vue -> Vue, Preact+Signals (+Htm) with Twind, Vite with Deno <br/>
-          - Server: Flask/Sanic, FastAPI, Astro or VuePress, Hono + Wouter with Pocketbase <br />
-          - Canvas API + Matter.js (for physics) or Konva.js (for scene graph/events), Zdog, p5.js, W by xem for sizecoding webgl demos <br />
+          <br/>
+          - UI: Petite-Vue -> Vue, Preact+Signals (+Htm) with Twind, Vite with Deno<br/>
+          - ABM workflow: Python Mesa with numpy, pandas, matplotlib/seaborn, Netlogo, though vanillajs + d3.js approach is simpler and pragmatic at small scale <br/>
+          - Server: Flask/FastHTML/FastAPI with HTMX, Deno Fresh, Hono + Wouter with Pocketbase <br />
+          - Canvas API + Matter.js (for physics) or Konva.js (for scene graph/events), Zdog, p5.js, W by xem for sizecoding webgl demos or just using Aframejs-Threejs<br />
           <br />
           <hr />
           <h3>About</h3>
-          - This page originally used threejs+vanta.globe background, but
-          currently uses raw WEBGL, bringing page size down from 600kb to under
-          40kb now, ofcourse with gzip the page you are seeing in browser is approx 11kb.<br />
-          - I got into programming through text-based games, learned twine, ink,
+          - This page originally used threejs with vanta.globe background, but currently uses raw WEBGL, bringing page size down from 600kb to under 40kb now, ofcourse with gzip the page you are seeing in browser is approx 12kb.<br />
+          - I got into programming through educational text-based games like the Sumerian game, learned twine, ink,
           inform6 (punyInform for a MSDOS game), and even made an interactive
           fiction game in TIC80 later with lua. I have since then been
           particpating in IFCOMP, SpringThing, ldjam almost every year. <br />
-          - Next learned to write php plugins for wordpress, not fun.
-          But made some pages for an NGO so I believe that was useful. Moved my
-          blog to jekyll later. <br/>
+          - Next learned to write php plugins for wordpress, not fun. But made some pages for an NGO so I believe that was useful. Moved my blog to jekyll later. <br/>
           - Around 2020 I found processing but
           my computer couldn't run opengl well, so next was p5js, and then
           utilised sololearn and freecodecamp to learn javascript (completed the
           front-end certificate course in both). <br />
           - 2023 onwards started obsessing over aframejs, and participated in
-          gamejams, became a game engine hopper but took that as an opportunity
+          gamejams, became a game engine hopper editing demos but took that as an opportunity
           to learn more about other programming languages <br />
           - 2025 Made Karui todo, shintaku and a few other android apps, diving
           deep into frontend frameworks and comparing svelte, alpinejs, preact, vue.          <br />
-          - Recently got into size-coding, became fond of Allman style of braces. Relevant stories are on the <a href="https://ronynn.github.io/blog">blog</a>. Follow me on <a href="https://github.com/ronynn">my github page</a> to see my new projects.<br />
+          - Recently got into size-coding, became fond of Allman style of braces. Related stories are on the <a href="https://ronynn.github.io/blog">blog</a>. Follow me on <a href="https://github.com/ronynn">my github page</a> to see my new projects.<br />
         </div>
 
           <div class="card">
