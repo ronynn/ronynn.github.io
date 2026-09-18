@@ -171,6 +171,9 @@
         z-index: -1;
       }
 
+
+
+
       #bio {
         position: absolute;
         top: 50%;
@@ -178,7 +181,7 @@
         transform: translate(-50%, -50%);
         text-align: left;
         width: 90%;
-        max-width: 60vw; 
+        max-width: 60vw;
         padding-right: 40px;
       }
 
@@ -190,6 +193,23 @@
           padding-right: 0;
         }
       }
+
+      /* Phones in landscape: short viewport, wide width */
+      @media (orientation: landscape) and (max-height: 500px) {
+        #bio {
+          top: 30%;   
+          left: 50%;
+          width: 85%;
+          max-width: 85%;
+          padding-right: 0;
+          font-size: 0.85rem;  
+          line-height: 1.3;
+        }
+      }
+
+
+
+
 
       #bio h3 {
         font-size: 2.5em;
