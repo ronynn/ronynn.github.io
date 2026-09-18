@@ -181,45 +181,20 @@
         transform: translate(-50%, -50%);
         text-align: left;
         width: 90%;
-        max-width: 60vw;
+        max-width: 60%;
         padding-right: 40px;
       }
 
-      @media (max-width: 450px) {
-        #bio {
-          left: 50%;
-          width: 90%;
-          max-width: 90%;
-          padding-right: 0;
-        }
-      }
-
-      /* Phones in landscape: short viewport, wide width */
-      @media (orientation: landscape) and (max-height: 500px) {
-        #bio {
-          top: 45%;   
-          left: 50%;
-          width: 85%;
-          max-width: 85%;
-          padding-right: 0;
-          font-size: 0.85rem;  
-          line-height: 1.3;
-        }
-      }
-
-
-
-
 
       #bio h3 {
-        font-size: 2.5em;
+        font-size: 2.8em;
         margin: 0.2em 0;
         padding-left: 0;
         padding-right: 0;
       }
 
       #bio h4 {
-        font-size: 2em;
+        font-size: 2.4em;
         margin: 0.2em 0;
         padding-left: 0;
         padding-right: 0;
@@ -229,21 +204,28 @@
         text-decoration: none;
         color: var(--button);
         margin: 0 0.5em;
-        font-size: 1em;
+        font-size: 1.8em;
       }
 
       #bio a:hover {
         color: var(--button-hover);
       }
 
-      @media (max-width: 768px) {
+      @media (max-width: 1000px) {
+        #bio {
+          left: 50%;
+          width: 90%;
+          max-width: 90%;
+          padding-right: 0;
+        }
+        
         #bio h3 {
-          font-size: 2.5em;
+          font-size: 2em;
           margin: 0.1em 0;
         }
 
         #bio h4 {
-          font-size: 1.4em;
+          font-size: 1.2em;
           margin: 0.1em 0;
         }
 

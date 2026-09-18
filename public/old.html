@@ -285,6 +285,7 @@
         z-index: -1;
       }
 
+
       #bio {
         position: absolute;
         top: 50%;
@@ -292,29 +293,19 @@
         transform: translate(-50%, -50%);
         text-align: left;
         width: 90%;
-        max-width: 65vw; /* cap at 65% of viewport width */
+        max-width: 60%;
         padding-right: 40px;
       }
 
-      /* Mobile: let it breathe, no fixed 65% gap */
-      @media (max-width: 768px) {
-        #bio {
-          left: 50%;
-          width: 90%;
-          max-width: 90%;
-          padding-right: 0;
-        }
-      }
-
       #bio h3 {
-        font-size: 3.5em;
+        font-size: 2.8em;
         margin: 0.2em 0;
         padding-left: 0;
         padding-right: 0;
       }
 
       #bio h4 {
-        font-size: 2.2em;
+        font-size: 2.5em;
         margin: 0.2em 0;
         padding-left: 0;
         padding-right: 0;
@@ -324,31 +315,33 @@
         text-decoration: none;
         color: var(--button);
         margin: 0 0.5em;
-        font-size: 1.7em;
+        font-size: 1.2em;
       }
 
       #bio a:hover {
         color: var(--button-hover);
       }
 
-      @media (max-width: 590px) {
+      @media (max-width: 1000px) {
+        #bio {
+          left: 50%;
+          width: 90%;
+          max-width: 90%;
+          padding-right: 0;
+        }
+        
         #bio h3 {
-          font-size: 2.5em;
+          font-size: 2em;
           margin: 0.1em 0;
         }
 
         #bio h4 {
-          font-size: 1.8em;
+          font-size: 1.2em;
           margin: 0.1em 0;
         }
 
         #bio a {
-          font-size: 1.4em;
-        }
-
-        #bio {
-          position: absolute;
-          top: 30%;
+          font-size: 1em;
         }
       }
 
@@ -471,10 +464,8 @@
       <h3>ronynn ʕ •ᴥ•ʔ</h3>
       <br /><br />
       <h4>
-        - Size-coding enthusiast<br />
         - Archaeology student, sizecoding and resource efficiency enthusiast<br />
-        - Interested in building educational tools for low-bandwidth regions and
-        research in computational humanities with social simulations modelling
+        - Interested in building educational tools for low-bandwidth regions and research in computational humanities with social simulations modelling
       </h4>
 
       <br />
