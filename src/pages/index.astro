@@ -173,14 +173,23 @@
 
       #bio {
         position: absolute;
-        width:66vw;
         top: 50%;
-        left: 50%;
-        margin-right: 60%;
+        left: 45%;
         transform: translate(-50%, -50%);
         text-align: left;
-        padding: 0;
         width: 90%;
+        max-width: 65vw;      /* cap at 65% of viewport width */
+        padding-right: 40px;
+      }
+
+      /* Mobile: let it breathe, no fixed 65% gap */
+      @media (max-width: 768px) {
+        #bio {
+          left: 50%;
+          width: 90%;
+          max-width: 90%;
+          padding-right: 0;
+        }
       }
 
       #bio h3 {
@@ -208,7 +217,7 @@
         color: var(--button-hover);
       }
 
-      @media (max-width: 490px) {
+      @media (max-width: 768px) {
         #bio h3 {
           font-size: 2.5em;
           margin: 0.1em 0;
@@ -221,11 +230,6 @@
 
         #bio a {
           font-size: 1em;
-        }
-
-        #bio {
-          position: absolute;
-          top: 30%;
         }
       }
 
@@ -348,8 +352,8 @@
 
       <h4>
         - Creator of Karui and LifeSim2k<br />
-        - Archaeology student, sizecoding and resource efficiency enthusiast.<br/>
-        - Interested in building educational tools for low-bandwidth regions and research in computational humanities and social simulations.
+        - Archaeology student, sizecoding and resource efficiency enthusiast<br/>
+        - Interested in building educational tools for low-bandwidth regions and research in computational humanities with social simulation modelling
       </h4>
 
       <br />
@@ -384,20 +388,17 @@
           <br />
           <hr />
           <h3>Tech Stack</h3>
-          In recent times, everyone's choice is React because AI knows it best, I'd still argue that simplicity, packet-size and closeness to native are still more important considerations for extensibility, specially for software that people will depend on. <br/>
+          Most people reach for React because AI tooling knows it best, I'd still argue that simplicity, bundle-size and closeness to native are still more important for extensibility, especially for software that people will rely on. <br/>
           <br/>
-          - UI: Petite-Vue -> Vue, Preact+Signals (+Htm) with Twind, Vite with Deno<br/>
-          - ABM workflow: Python Mesa with numpy, pandas, matplotlib/seaborn, Netlogo, though vanillajs + d3.js approach is simpler and pragmatic at small scale <br/>
-          - Server: Flask/FastHTML/FastAPI with HTMX, Deno Fresh, Hono + Wouter with Pocketbase <br />
+          - UI: Petite-Vue to Vue (with Twind at times)<br/>
+          - ABM workflow: Python Mesa with Matplotlib/Seaborn though vanilla canvas (+ d3.js at times) approach is simpler and pragmatic at small scale <br/>
+          - Backend (Exploring): Flask/FastHTML/FastAPI with HTMX, Fresh (Deno, Preact+Signals), Hono + Wouter with PocketBase <br />
           - Canvas API + Matter.js (for physics) or Konva.js (for scene graph/events), Zdog, p5.js, W by xem for sizecoding webgl demos or just using Aframejs-Threejs<br />
           <br />
           <hr />
           <h3>About</h3>
           - This page originally used threejs with vanta.globe background, but currently uses raw WEBGL, bringing page size down from 600kb to under 40kb now, ofcourse with gzip the page you are seeing in browser is approx 12kb.<br />
-          - I got into programming through educational text-based games like the Sumerian game, learned twine, ink,
-          inform6 (punyInform for a MSDOS game), and even made an interactive
-          fiction game in TIC80 later with lua. I have since then been
-          particpating in IFCOMP, SpringThing, ldjam almost every year. <br />
+          - I got into programming through educational text-based games like the Sumerian game, this aligned with my interests in modelling reality and historical communications, so I learned twine, ink, inform6 (punyInform for a MSDOS game), and even made an interactive fiction game in TIC80 later with lua. I have since then been particpating in IFCOMP, SpringThing, ldjam almost every year. <br />
           - Next learned to write php plugins for wordpress, not fun. But made some pages for an NGO so I believe that was useful. Moved my blog to jekyll later. <br/>
           - Around 2020 I found processing but
           my computer couldn't run opengl well, so next was p5js, and then
@@ -411,211 +412,211 @@
           - Recently got into size-coding, became fond of Allman style of braces. Related stories are on the <a href="https://ronynn.github.io/blog">blog</a>. Follow me on <a href="https://github.com/ronynn">my github page</a> to see my new projects.<br />
         </div>
 
-          <div class="card">
-            <h3>FOSS Applications</h3>
+        <div class="card">
+          <h3>FOSS Applications</h3>
 
-            <div class="card" data-user="ronynn" data-repo="karui">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="shintaku">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="kisoku">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="dash">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="cat-gen">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="weather">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="Xed-Editor" data-repo="Xed-Editor">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
+          <div class="card" data-user="ronynn" data-repo="karui">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
 
-          <div class="card">
-            <h3>Game Repositories</h3>
-
-            <div class="card" data-user="ronynn" data-repo="lifesim2k">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="interview-interview">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="potato-peace">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="helper-of-humanity">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="game-jam-submissions">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-            <div class="card" data-user="ronynn" data-repo="graphics-experiments">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
-
-            <div class="card" data-user="ronynn" data-repo="prototypes">
-              <h3 class="card-name">Loading...</h3>
-              <p class="card-description">Loading description...</p>
-              <a href="#" class="card-link" target="_blank"> Visit Repo </a>
-            </div>
+          <div class="card" data-user="ronynn" data-repo="shintaku">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
           </div>
 
+          <div class="card" data-user="ronynn" data-repo="kisoku">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
 
+          <div class="card" data-user="ronynn" data-repo="dash">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
+
+          <div class="card" data-user="ronynn" data-repo="cat-gen">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
+
+          <div class="card" data-user="ronynn" data-repo="weather">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
+
+          <div class="card" data-user="Xed-Editor" data-repo="Xed-Editor">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
         </div>
-          <br />
-          Give this page a 🌟 on its:&nbsp
-          <a href="https://github.com/ronynn/ronynn.github.io">github repo</a>.
-        </section>
 
-          <script is:inline src="/globe.js"></script>
+        <div class="card">
+          <h3>Game Repositories</h3>
 
-          <script>
-            // DOM Interaction logic
+          <div class="card" data-user="ronynn" data-repo="lifesim2k">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
 
-            const getThemeColor = (variable) => {
-              return parseInt(
-                getComputedStyle(document.documentElement)
-                .getPropertyValue(variable)
-                .trim()
-                .replace("#", "0x"),
-              );
-            };
+          <div class="card" data-user="ronynn" data-repo="interview-interview">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
 
-            let vantaEffect = VANTA.GLOBE({
-              el: "#vanta",
-              mouseControls: true,
-              touchControls: true,
-              gyroControls: true,
-              minHeight: 200.0,
-              minWidth: 200.0,
-              scale: 1.0,
-              scaleMobile: 1.0,
-              color: getThemeColor("--button"),
-              backgroundColor: getThemeColor("--bg"),
-              size: 0.8,
-            });
+          <div class="card" data-user="ronynn" data-repo="potato-peace">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
 
-            function updateTheme(theme) {
-              document.documentElement.setAttribute("data-theme", theme);
+          <div class="card" data-user="ronynn" data-repo="helper-of-humanity">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
 
-              if (vantaEffect) {
-                vantaEffect.destroy();
-              }
+          <div class="card" data-user="ronynn" data-repo="game-jam-submissions">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
+          <div class="card" data-user="ronynn" data-repo="graphics-experiments">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
 
-              vantaEffect = VANTA.GLOBE({
-                el: "#vanta",
-                mouseControls: true,
-                touchControls: true,
-                gyroControls: true,
-                minHeight: 200.0,
-                minWidth: 200.0,
-                scale: 1.0,
-                scaleMobile: 1.0,
-                color: getThemeColor("--button"),
-                backgroundColor: getThemeColor("--bg"),
-                size: 0.8,
-              });
-            }
+          <div class="card" data-user="ronynn" data-repo="prototypes">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
+        </div>
 
-            // --- UPDATED DROPDOWN LOGIC ---
-            const toggleBtn = document.getElementById("theme-toggle-btn");
-            const themeMenu = document.getElementById("theme-menu");
 
-            // Toggle menu visibility on button click
-            toggleBtn.addEventListener("click", (e) => {
-              e.stopPropagation(); // Prevent bubbling to window
-              themeMenu.classList.toggle("show");
-            });
+      </div>
+      <br />
+      Give this page a 🌟 on its:&nbsp
+      <a href="https://github.com/ronynn/ronynn.github.io">github repo</a>.
+    </section>
 
-            // Handle theme selection
-            document
-              .querySelectorAll(".theme-dropdown-content button")
-              .forEach((btn) => {
-                btn.addEventListener("click", () => {
-                  updateTheme(btn.getAttribute("data-theme"));
-                  themeMenu.classList.remove("show"); 
-                });
-              });
+    <script is:inline src="/globe.js"></script>
 
-            // Close menu if clicked outside
-            window.addEventListener("click", () => {
-              if (themeMenu.classList.contains("show")) {
-                themeMenu.classList.remove("show");
-              }
-            });
+    <script>
+      // DOM Interaction logic
 
-            // Fetch api requests
+      const getThemeColor = (variable) => {
+        return parseInt(
+          getComputedStyle(document.documentElement)
+          .getPropertyValue(variable)
+          .trim()
+          .replace("#", "0x"),
+        );
+      };
 
-            function loadCardData(card) {
-              const user = card.getAttribute("data-user");
-              const repo = card.getAttribute("data-repo");
-              const apiUrl = `https://api.github.com/repos/${user}/${repo}`;
+      let vantaEffect = VANTA.GLOBE({
+        el: "#vanta",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: true,
+        minHeight: 200.0,
+        minWidth: 200.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+        color: getThemeColor("--button"),
+        backgroundColor: getThemeColor("--bg"),
+        size: 0.8,
+      });
 
-              card.querySelector(".card-name").textContent = repo;
-              card.querySelector(".card-link").href =
-                `https://github.com/${user}/${repo}`;
+      function updateTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
 
-              fetch(apiUrl)
-                .then((response) => {
-                  return response.json();
-                })
-                .then((data) => {
-                  card.querySelector(".card-description").textContent =
-                    data.description || "No Description";
-                })
-                .catch((error) => {
-                  console.error("Error loading card data:", error);
-                  card.querySelector(".card-name").textContent = "Error loading data";
-                });
-            }
+        if (vantaEffect) {
+          vantaEffect.destroy();
+        }
 
-            document.querySelectorAll(".card[data-repo]").forEach((card) => {
-              loadCardData(card);
-            });
-          </script>
+        vantaEffect = VANTA.GLOBE({
+          el: "#vanta",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: true,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          color: getThemeColor("--button"),
+          backgroundColor: getThemeColor("--bg"),
+          size: 0.8,
+        });
+      }
 
-          <script data-goatcounter="https://ronynn.goatcounter.com/count" async src="//gc.zgo.at/count.js"> </script>    
-        </body>
-        </html>
+      // --- UPDATED DROPDOWN LOGIC ---
+      const toggleBtn = document.getElementById("theme-toggle-btn");
+      const themeMenu = document.getElementById("theme-menu");
+
+      // Toggle menu visibility on button click
+      toggleBtn.addEventListener("click", (e) => {
+        e.stopPropagation(); // Prevent bubbling to window
+        themeMenu.classList.toggle("show");
+      });
+
+      // Handle theme selection
+      document
+        .querySelectorAll(".theme-dropdown-content button")
+        .forEach((btn) => {
+          btn.addEventListener("click", () => {
+            updateTheme(btn.getAttribute("data-theme"));
+            themeMenu.classList.remove("show"); 
+          });
+        });
+
+      // Close menu if clicked outside
+      window.addEventListener("click", () => {
+        if (themeMenu.classList.contains("show")) {
+          themeMenu.classList.remove("show");
+        }
+      });
+
+      // Fetch api requests
+
+      function loadCardData(card) {
+        const user = card.getAttribute("data-user");
+        const repo = card.getAttribute("data-repo");
+        const apiUrl = `https://api.github.com/repos/${user}/${repo}`;
+
+        card.querySelector(".card-name").textContent = repo;
+        card.querySelector(".card-link").href =
+          `https://github.com/${user}/${repo}`;
+
+        fetch(apiUrl)
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            card.querySelector(".card-description").textContent =
+              data.description || "No Description";
+          })
+          .catch((error) => {
+            console.error("Error loading card data:", error);
+            card.querySelector(".card-name").textContent = "Error loading data";
+          });
+      }
+
+      document.querySelectorAll(".card[data-repo]").forEach((card) => {
+        loadCardData(card);
+      });
+    </script>
+
+    <script data-goatcounter="https://ronynn.goatcounter.com/count" async src="//gc.zgo.at/count.js"> </script>    
+  </body>
+</html>

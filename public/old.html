@@ -40,7 +40,7 @@
     <meta name="target" content="all" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="MobileOptimized" content="320" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <title>ronynn's homepage</title>
 
     <style>
@@ -288,12 +288,22 @@
       #bio {
         position: absolute;
         top: 50%;
-        left: 50%;
-        margin-right: 60%;
+        left: 45%;
         transform: translate(-50%, -50%);
         text-align: left;
-        padding: 0;
         width: 90%;
+        max-width: 65vw; /* cap at 65% of viewport width */
+        padding-right: 40px;
+      }
+
+      /* Mobile: let it breathe, no fixed 65% gap */
+      @media (max-width: 768px) {
+        #bio {
+          left: 50%;
+          width: 90%;
+          max-width: 90%;
+          padding-right: 0;
+        }
       }
 
       #bio h3 {
@@ -360,12 +370,13 @@
         border-radius: 4px;
         padding: 1.5rem;
         background: rgba(128, 128, 128, 0.15);
-        backdrop-filter: blur(12px)  ;
+        backdrop-filter: blur(12px);
 
-        -webkit-backdrop-filter: blur(12px) saturate(1.4) brightness(1.05) contrast(0.95);
+        -webkit-backdrop-filter: blur(12px) saturate(1.4) brightness(1.05)
+          contrast(0.95);
         position: relative;
         margin-top: 5px;
-        isolation:isolate;
+        isolation: isolate;
       }
 
       .theme-dropdown {
@@ -458,12 +469,12 @@
 
     <div id="bio">
       <h3>ronynn ʕ •ᴥ•ʔ</h3>
-
+      <br /><br />
       <h4>
         - Size-coding enthusiast<br />
-        - Archaeology student <br />
-        - Making interactive experiences<br />
-        - and data-focussed presentations
+        - Archaeology student, sizecoding and resource efficiency enthusiast<br />
+        - Interested in building educational tools for low-bandwidth regions and
+        research in computational humanities with social simulations modelling
       </h4>
 
       <br />
@@ -478,7 +489,8 @@
       >
 
       <h5>
-        - This page is maintains backdrop-filter effect, the globe is pure WebGL. <br />
+        - This page is maintains backdrop-filter effect, the globe is pure
+        WebGL. <br />
         - Touch the globe, or move around your device to see it. <br />
         - Scroll down to see links to my repos.
       </h5>
@@ -522,11 +534,11 @@
           - Next step according to blogs I read back then was to make a blog,
           but I didn't find it that much fun to write php plugins for wordpress.
           But made some pages for an NGO so I believe that was useful. Moved my
-          blog to jekyll later. <br/>
-          - Around 2020 I got really into processing but
-          my computer couldn't run opengl well, so next was p5js, and then
-          utilised sololearn and freecodecamp to learn javascript (completed the
-          front-end certificate course in both). <br />
+          blog to jekyll later. <br />
+          - Around 2020 I got really into processing but my computer couldn't
+          run opengl well, so next was p5js, and then utilised sololearn and
+          freecodecamp to learn javascript (completed the front-end certificate
+          course in both). <br />
           - 2023 onwards started obsessing over aframejs, and participated in
           gamejams, became a game engine hopper but took that as an opportunity
           to learn more about other programming languages <br />
@@ -765,15 +777,22 @@
         loadCardData(card);
       });
     </script>
-    
-    <script is:inline>      
+
+    <script is:inline>
       // Register Service Worker
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(() => console.log('Service Worker Registered'))
-      .catch((err) => console.error('Service Worker Registration Failed:', err))
-  }
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then(() => console.log("Service Worker Registered"))
+          .catch((err) =>
+            console.error("Service Worker Registration Failed:", err),
+          );
+      }
     </script>
-    <script data-goatcounter="https://ronynn.goatcounter.com/count" async src="//gc.zgo.at/count.js"> </script>    
+    <script
+      data-goatcounter="https://ronynn.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </body>
 </html>
