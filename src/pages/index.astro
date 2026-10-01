@@ -176,7 +176,7 @@
 
       #bio {
         position: absolute;
-        top: 50%;
+        top: 40%;
         left: 45%;
         transform: translate(-50%, -50%);
         text-align: left;
@@ -389,29 +389,39 @@
           <br />
           <hr />
           <h3>Tech Stack</h3>
-          Most people reach for React because AI tooling knows it best, I'd still argue that simplicity, bundle-size and closeness to native are still more important for extensibility, especially for software that people will rely on. <br/>
-          <br/>
-          - UI: Petite-Vue to Vue (with Twind at times)<br/>
-          - ABM workflow: Python Mesa with Matplotlib/Seaborn though vanilla canvas (+ d3.js at times) approach is simpler and pragmatic at small scale <br/>
-          - Backend (Exploring): Flask/FastHTML/FastAPI with HTMX, Fresh (Deno, Preact+Signals), Hono + Wouter with PocketBase <br />
-          - Canvas API + Matter.js (for physics) or Konva.js (for scene graph/events), Zdog, p5.js, W by xem for sizecoding webgl demos or just using Aframejs-Threejs<br />
+          This section is for me to look back at what tools to use when jumping into making something after months and feeling lost at picking libraries. <br/>
+          
+          - UI: If simple jQuery like dom manipulation wont do I often use makeshift signals (waiting for TC39 proposal for signals and pipes to turn real), there's Petite-Vue for progressive addition to later convert to Vue. Preact with h functions has a cool vibe not to mention with React syntax being so popular, it's easier to expand into bigger projects while keeping bundle size small.<br/>
+          - ABM workflow:  Vanilla canvas (+ d3.js at times) approach is simpler and pragmatic at small scale and for presentations, researchers typically use Netlogo, Python Mesa with Matplotlib/Seaborn, MASON with java. <br/>
+          - Backend (Exploring): Flask/FastHTML/FastAPI with HTMX, Fresh (Deno, Preact+Signals), Hono + Wouter with PocketBase, completed Freecodecamps Express tutorial long ago but Fastify is better for all purposes at the moment. <br />
+          - Graphics: Canvas API + Matter.js (for physics) or Konva.js (for scene graph/events), Zdog (sweet), p5.js (nice errors), there's q5.js and pixijs (webgpu), W by xem for sizecoding webgl demos or just using Threejs (or AFrame.js).<br />
           <br />
           <hr />
+          <h3> Books </h3>
+<br/>
+Some programming books I like to recommend others, and look back time to time for reference or fun.
+<br/>
+- Android Application Development for Dummies <br/>
+- Why's poignant guide to Ruby <br/>
+- The Rust Programming Language book <br/>
+- Eloquent Javascript <br/>
+- The hitchhiker's guide to Python (Al Stewgart books are great too) <br/>
+<hr/>
           <h3>About</h3>
           - This page originally used threejs with vanta.globe background, but currently uses raw WEBGL, bringing page size down from 600kb to under 40kb now, ofcourse with gzip the page you are seeing in browser is approx 12kb.<br />
           - I got into programming through educational text-based games like the Sumerian game, this aligned with my interests in modelling reality and historical communications, so I learned twine, ink, inform6 (punyInform for a MSDOS game), and even made an interactive fiction game in TIC80 later with lua. I have since then been particpating in IFCOMP, SpringThing, ldjam almost every year. <br />
           - Next learned to write php plugins for wordpress, not fun. But made some pages for an NGO so I believe that was useful. Moved my blog to jekyll later. <br/>
           - Around 2020 I found processing but
-          my computer couldn't run opengl well, so next was p5js, and then
+          my computer couldn't run opengl well, so next was p5.js, and then
           utilised sololearn and freecodecamp to learn javascript (completed the
           front-end certificate course in both). <br />
-          - 2023 onwards started obsessing over aframejs, and participated in
-          gamejams, became a game engine hopper editing demos but took that as an opportunity
+          - 2023: Participated in gamejams, became a game engine hopper editing demos but took that as an opportunity
           to learn more about other programming languages <br />
-          - 2025 Made Karui todo, shintaku and a few other android apps, diving
+          - 2025: Made Karui todo, shintaku and a few other android apps, diving
           deep into frontend frameworks and comparing svelte, alpinejs, preact, vue.          <br />
-          - Recently got into size-coding, became fond of Allman style of braces. Related stories are on the <a href="https://ronynn.github.io/blog">blog</a>. Follow me on <a href="https://github.com/ronynn">my github page</a> to see my new projects.<br />
+          - 2026: Became fond of Allman style of braces. Other fun facts about me are on the <a href="https://ronynn.github.io/blog">blog</a>. Follow my <a href="https://github.com/ronynn">my github page</a> to see my new projects.<br />
         </div>
+
 
         <div class="card">
           <h3>FOSS Applications</h3>
@@ -423,6 +433,12 @@
           </div>
 
           <div class="card" data-user="ronynn" data-repo="shintaku">
+            <h3 class="card-name">Loading...</h3>
+            <p class="card-description">Loading description...</p>
+            <a href="#" class="card-link" target="_blank"> Visit Repo </a>
+          </div>
+
+          <div class="card" data-user="ronynn" data-repo="hashiru">
             <h3 class="card-name">Loading...</h3>
             <p class="card-description">Loading description...</p>
             <a href="#" class="card-link" target="_blank"> Visit Repo </a>
